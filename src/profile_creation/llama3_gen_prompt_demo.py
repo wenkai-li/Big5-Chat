@@ -20,7 +20,7 @@ def remove_double_quotes(s):
     # Remove double quotes from the beginning and end
     return re.sub(r'^"+|"+$', '', s)
 
-prompt_chat_res = json.load(open("./prompt_chat_res.json", 'r'))
+prompt_demo_res = json.load(open("./prompt_demo_res.json", 'r'))
 
 class Generator():
     def __init__(self, args):
@@ -153,7 +153,7 @@ class CO3Sotopia():
         for idx, level in enumerate(big_five_level):
             if level in ['0', '1']:
                 level = int(level)
-                instruction = prompt_chat_res[big_five_traits[idx]][level_str[level]]
+                instruction = prompt_demo_res[big_five_traits[idx]][level_str[level]]
                 break
         print(instruction)
         return instruction

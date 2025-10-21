@@ -58,8 +58,8 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-### Prompt_chat
-mode=("prompt_chat_0xxxx" "prompt_chat_1xxxx" "prompt_chat_x0xxx" "prompt_chat_x1xxx" "prompt_chat_xx0xx" "prompt_chat_xx1xx" "prompt_chat_xxx0x" "prompt_chat_xxx1x" "prompt_chat_xxxx0" "prompt_chat_xxxx1")
+### Prompt_demo
+mode=("prompt_demo_0xxxx" "prompt_demo_1xxxx" "prompt_demo_x0xxx" "prompt_demo_x1xxx" "prompt_demo_xx0xx" "prompt_demo_xx1xx" "prompt_demo_xxx0x" "prompt_demo_xxx1x" "prompt_demo_xxxx0" "prompt_demo_xxxx1")
 for mode in "${mode[@]}"; do
     CUDA_VISIBLE_DEVICES=1 python3 run_psychobench.py \
         --model llama3_70b \
@@ -71,8 +71,8 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-### Prompt_chat_sampling
-mode=("prompt_chat_sampling_0xxxx" "prompt_chat_sampling_1xxxx" "prompt_chat_sampling_x0xxx" "prompt_chat_sampling_x1xxx" "prompt_chat_sampling_xx0xx" "prompt_chat_sampling_xx1xx" "prompt_chat_sampling_xxx0x" "prompt_chat_sampling_xxx1x" "prompt_chat_sampling_xxxx0" "prompt_chat_sampling_xxxx1")
+### Prompt_demo_sampling
+mode=("prompt_demo_sampling_0xxxx" "prompt_demo_sampling_1xxxx" "prompt_demo_sampling_x0xxx" "prompt_demo_sampling_x1xxx" "prompt_demo_sampling_xx0xx" "prompt_demo_sampling_xx1xx" "prompt_demo_sampling_xxx0x" "prompt_demo_sampling_xxx1x" "prompt_demo_sampling_xxxx0" "prompt_demo_sampling_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -84,7 +84,7 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-mode=("prompt_chat_sampling_0xxxx")
+mode=("prompt_demo_sampling_0xxxx")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -96,8 +96,8 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-### Prompt_v1
-mode=("prompt_v1_0xxxx" "prompt_v1_1xxxx" "prompt_v1_x0xxx" "prompt_v1_x1xxx" "prompt_v1_xx0xx" "prompt_v1_xx1xx" "prompt_v1_xxx0x" "prompt_v1_xxx1x" "prompt_v1_xxxx0" "prompt_v1_xxxx1")
+### Prompt_inst
+mode=("prompt_inst_0xxxx" "prompt_inst_1xxxx" "prompt_inst_x0xxx" "prompt_inst_x1xxx" "prompt_inst_xx0xx" "prompt_inst_xx1xx" "prompt_inst_xxx0x" "prompt_inst_xxx1x" "prompt_inst_xxxx0" "prompt_inst_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -110,8 +110,8 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-### Prompt_v4
-mode=("prompt_v4_0xxxx" "prompt_v4_1xxxx" "prompt_v4_x0xxx" "prompt_v4_x1xxx" "prompt_v4_xx0xx" "prompt_v4_xx1xx" "prompt_v4_xxx0x" "prompt_v4_xxx1x" "prompt_v4_xxxx0" "prompt_v4_xxxx1")
+### Prompt_llm_description
+mode=("prompt_llm_description_0xxxx" "prompt_llm_description_1xxxx" "prompt_llm_description_x0xxx" "prompt_llm_description_x1xxx" "prompt_llm_description_xx0xx" "prompt_llm_description_xx1xx" "prompt_llm_description_xxx0x" "prompt_llm_description_xxx1x" "prompt_llm_description_xxxx0" "prompt_llm_description_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -195,7 +195,7 @@ for mode in "${mode[@]}"; do
 done
 
 ### Prompt chat
-mode=("prompt_chat_0xxxx" "prompt_chat_1xxxx" "prompt_chat_x0xxx" "prompt_chat_x1xxx" "prompt_chat_xx0xx" "prompt_chat_xx1xx" "prompt_chat_xxx0x" "prompt_chat_xxx1x" "prompt_chat_xxxx0" "prompt_chat_xxxx1")
+mode=("prompt_demo_0xxxx" "prompt_demo_1xxxx" "prompt_demo_x0xxx" "prompt_demo_x1xxx" "prompt_demo_xx0xx" "prompt_demo_xx1xx" "prompt_demo_xxx0x" "prompt_demo_xxx1x" "prompt_demo_xxxx0" "prompt_demo_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_8b \
@@ -207,8 +207,8 @@ for mode in "${mode[@]}"; do
         --name-exp 8b_${mode}
 done
 
-### Prompt_chat_sampling
-mode=("prompt_chat_sampling_0xxxx" "prompt_chat_sampling_1xxxx" "prompt_chat_sampling_x0xxx" "prompt_chat_sampling_x1xxx" "prompt_chat_sampling_xx0xx" "prompt_chat_sampling_xx1xx" "prompt_chat_sampling_xxx0x" "prompt_chat_sampling_xxx1x" "prompt_chat_sampling_xxxx0" "prompt_chat_sampling_xxxx1")
+### Prompt_demo_sampling
+mode=("prompt_demo_sampling_0xxxx" "prompt_demo_sampling_1xxxx" "prompt_demo_sampling_x0xxx" "prompt_demo_sampling_x1xxx" "prompt_demo_sampling_xx0xx" "prompt_demo_sampling_xx1xx" "prompt_demo_sampling_xxx0x" "prompt_demo_sampling_xxx1x" "prompt_demo_sampling_xxxx0" "prompt_demo_sampling_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -222,7 +222,7 @@ done
 
 
 ### Prompt v1
-mode=("prompt_v1_0xxxx" "prompt_v1_1xxxx" "prompt_v1_x0xxx" "prompt_v1_x1xxx" "prompt_v1_xx0xx" "prompt_v1_xx1xx" "prompt_v1_xxx0x" "prompt_v1_xxx1x" "prompt_v1_xxxx0" "prompt_v1_xxxx1")
+mode=("prompt_inst_0xxxx" "prompt_inst_1xxxx" "prompt_inst_x0xxx" "prompt_inst_x1xxx" "prompt_inst_xx0xx" "prompt_inst_xx1xx" "prompt_inst_xxx0x" "prompt_inst_xxx1x" "prompt_inst_xxxx0" "prompt_inst_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_8b \
@@ -236,7 +236,7 @@ for mode in "${mode[@]}"; do
 done
 
 ### Prompt v4
-mode=("prompt_v4_0xxxx" "prompt_v4_1xxxx" "prompt_v4_x0xxx" "prompt_v4_x1xxx" "prompt_v4_xx0xx" "prompt_v4_xx1xx" "prompt_v4_xxx0x" "prompt_v4_xxx1x" "prompt_v4_xxxx0" "prompt_v4_xxxx1")
+mode=("prompt_llm_description_0xxxx" "prompt_llm_description_1xxxx" "prompt_llm_description_x0xxx" "prompt_llm_description_x1xxx" "prompt_llm_description_xx0xx" "prompt_llm_description_xx1xx" "prompt_llm_description_xxx0x" "prompt_llm_description_xxx1x" "prompt_llm_description_xxxx0" "prompt_llm_description_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_8b \
@@ -321,7 +321,7 @@ for mode in "${mode[@]}"; do
 done
 
 ### Prompt v1
-mode=("prompt_v1_0xxxx" "prompt_v1_1xxxx" "prompt_v1_x0xxx" "prompt_v1_x1xxx" "prompt_v1_xx0xx" "prompt_v1_xx1xx" "prompt_v1_xxx0x" "prompt_v1_xxx1x" "prompt_v1_xxxx0" "prompt_v1_xxxx1")
+mode=("prompt_inst_0xxxx" "prompt_inst_1xxxx" "prompt_inst_x0xxx" "prompt_inst_x1xxx" "prompt_inst_xx0xx" "prompt_inst_xx1xx" "prompt_inst_xxx0x" "prompt_inst_xxx1x" "prompt_inst_xxxx0" "prompt_inst_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -335,7 +335,7 @@ for mode in "${mode[@]}"; do
 done
 
 # Prompt chat
-mode=("prompt_chat_0xxxx" "prompt_chat_1xxxx" "prompt_chat_x0xxx" "prompt_chat_x1xxx" "prompt_chat_xx0xx")
+mode=("prompt_demo_0xxxx" "prompt_demo_1xxxx" "prompt_demo_x0xxx" "prompt_demo_x1xxx" "prompt_demo_xx0xx")
 for mode in "${mode[@]}"; do
     CUDA_VISIBLE_DEVICES=0 python3 run_psychobench.py \
         --model llama3_70b \
@@ -347,7 +347,7 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-mode=("prompt_chat_xx1xx" "prompt_chat_xxx0x" "prompt_chat_xxx1x" "prompt_chat_xxxx0" "prompt_chat_xxxx1")
+mode=("prompt_demo_xx1xx" "prompt_demo_xxx0x" "prompt_demo_xxx1x" "prompt_demo_xxxx0" "prompt_demo_xxxx1")
 for mode in "${mode[@]}"; do
     CUDA_VISIBLE_DEVICES=1 python3 run_psychobench.py \
         --model llama3_70b \
@@ -359,8 +359,8 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-### Prompt_chat_sampling
-mode=("prompt_chat_sampling_0xxxx" "prompt_chat_sampling_1xxxx" "prompt_chat_sampling_x0xxx" "prompt_chat_sampling_x1xxx" "prompt_chat_sampling_xx0xx" "prompt_chat_sampling_xx1xx" "prompt_chat_sampling_xxx0x" "prompt_chat_sampling_xxx1x" "prompt_chat_sampling_xxxx0" "prompt_chat_sampling_xxxx1")
+### Prompt_demo_sampling
+mode=("prompt_demo_sampling_0xxxx" "prompt_demo_sampling_1xxxx" "prompt_demo_sampling_x0xxx" "prompt_demo_sampling_x1xxx" "prompt_demo_sampling_xx0xx" "prompt_demo_sampling_xx1xx" "prompt_demo_sampling_xxx0x" "prompt_demo_sampling_xxx1x" "prompt_demo_sampling_xxxx0" "prompt_demo_sampling_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -372,7 +372,7 @@ for mode in "${mode[@]}"; do
         --name-exp 70b_${mode}
 done
 
-mode=("prompt_chat_sampling_xx1xx")
+mode=("prompt_demo_sampling_xx1xx")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -385,7 +385,7 @@ for mode in "${mode[@]}"; do
 done
 
 ### Prompt v4
-mode=("prompt_v4_0xxxx" "prompt_v4_1xxxx" "prompt_v4_x0xxx" "prompt_v4_x1xxx" "prompt_v4_xx0xx" "prompt_v4_xx1xx" "prompt_v4_xxx0x" "prompt_v4_xxx1x" "prompt_v4_xxxx0" "prompt_v4_xxxx1")
+mode=("prompt_llm_description_0xxxx" "prompt_llm_description_1xxxx" "prompt_llm_description_x0xxx" "prompt_llm_description_x1xxx" "prompt_llm_description_xx0xx" "prompt_llm_description_xx1xx" "prompt_llm_description_xxx0x" "prompt_llm_description_xxx1x" "prompt_llm_description_xxxx0" "prompt_llm_description_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_70b \
@@ -455,7 +455,7 @@ for mode in "${mode[@]}"; do
 done
 
 ### Prompt v1
-mode=("prompt_v1_0xxxx" "prompt_v1_1xxxx" "prompt_v1_x0xxx" "prompt_v1_x1xxx" "prompt_v1_xx0xx" "prompt_v1_xx1xx" "prompt_v1_xxx0x" "prompt_v1_xxx1x" "prompt_v1_xxxx0" "prompt_v1_xxxx1")
+mode=("prompt_inst_0xxxx" "prompt_inst_1xxxx" "prompt_inst_x0xxx" "prompt_inst_x1xxx" "prompt_inst_xx0xx" "prompt_inst_xx1xx" "prompt_inst_xxx0x" "prompt_inst_xxx1x" "prompt_inst_xxxx0" "prompt_inst_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_8b \
@@ -482,7 +482,7 @@ for mode in "${mode[@]}"; do
 done
 
 ### Prompt v4
-mode=("prompt_v4_0xxxx" "prompt_v4_1xxxx" "prompt_v4_x0xxx" "prompt_v4_x1xxx" "prompt_v4_xx0xx" "prompt_v4_xx1xx" "prompt_v4_xxx0x" "prompt_v4_xxx1x" "prompt_v4_xxxx0" "prompt_v4_xxxx1")
+mode=("prompt_llm_description_0xxxx" "prompt_llm_description_1xxxx" "prompt_llm_description_x0xxx" "prompt_llm_description_x1xxx" "prompt_llm_description_xx0xx" "prompt_llm_description_xx1xx" "prompt_llm_description_xxx0x" "prompt_llm_description_xxx1x" "prompt_llm_description_xxxx0" "prompt_llm_description_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_8b \

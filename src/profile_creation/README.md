@@ -37,13 +37,13 @@ CUDA_VISIBLE_DEVICES=1 python llama3_gen_finetune.py --out_file ./finetune_soda/
 
 ## general prommpt chat o c e a
 
-CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_chat.py --out_file ./finetune_soda/prompt_chat_o_1.jsonl --person_trait o
+CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_demo.py --out_file ./finetune_soda/prompt_demo_o_1.jsonl --person_trait o
 
 
-CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_chat.py --out_file ./finetune_soda/prompt_chat_c_1.jsonl --person_trait c
+CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_demo.py --out_file ./finetune_soda/prompt_demo_c_1.jsonl --person_trait c
 
-CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_chat.py --out_file ./finetune_soda/prompt_chat_e_1.jsonl --person_trait e
+CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_demo.py --out_file ./finetune_soda/prompt_demo_e_1.jsonl --person_trait e
 
-CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_chat.py --out_file ./finetune_soda/prompt_chat_a_1.jsonl --person_trait a
+CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_demo.py --out_file ./finetune_soda/prompt_demo_a_1.jsonl --person_trait a
 
-CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_chat.py --out_file ./finetune_soda/prompt_chat_n_1.jsonl --person_trait n -->
+CUDA_VISIBLE_DEVIVES=0,1 python llama3_gen_prompt_demo.py --out_file ./finetune_soda/prompt_demo_n_1.jsonl --person_trait n -->

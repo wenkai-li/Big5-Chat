@@ -9,7 +9,7 @@ if __name__ == "__main__":
     levels = ['high', 'low']
     n_examples = 10
     
-    out_f = open("prompt_chat_res.json", 'w')
+    out_f = open("prompt_demo_res.json", 'w')
     res_data = {}
     for idx, trait in enumerate(['o', 'c', 'e', 'a', 'n']):
         res_data[trait] = {}

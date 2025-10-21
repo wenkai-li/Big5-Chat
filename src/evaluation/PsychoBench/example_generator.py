@@ -134,25 +134,25 @@ def example_generator(questionnaire, args):
                         result = ''
                         if model in ['llama3_8b', 'llama3_70b']:
                             prompt_prefix = ""
-                            if args.model_mode.startswith("prompt_v1_"):
-                                from evaluation.prompts.get_prompts import get_prompting_instruction_v1
-                                prompt_prefix = get_prompting_instruction_v1(args.model_mode[-5:]) + "\n"
-                            
-                            elif args.model_mode.startswith("prompt_chat_sampling_"):
-                                from evaluation.prompts.get_prompts import get_prompting_instruction_chat_sampling
-                                prompt_prefix = get_prompting_instruction_chat_sampling(args.model_mode[-5:]) + "\n"
-                            
-                            elif args.model_mode.startswith("prompt_chat_"):
-                                from evaluation.prompts.get_prompts import get_prompting_instruction_chat
-                                prompt_prefix = get_prompting_instruction_chat(args.model_mode[-5:]) + "\n"
-                            
-                            elif args.model_mode.startswith("prompt_v4_"):
-                                from evaluation.prompts.get_prompts import get_prompting_instruction_v4
-                                prompt_prefix = get_prompting_instruction_v4(args.model_mode[-5:]) + "\n"
-                            
-                            elif args.model_mode.startswith("prompt_v5_"):
-                                from evaluation.prompts.get_prompts import get_prompting_instruction_v5
-                                prompt_prefix = get_prompting_instruction_v5(args.model_mode[-5:]) + "\n"
+                            if args.model_mode.startswith("prompt_inst_"):
+                                from evaluation.prompts.get_prompts import get_prompting_instruction_inst
+                                prompt_prefix = get_prompting_instruction_inst(args.model_mode[-5:]) + "\n"
+
+                            elif args.model_mode.startswith("prompt_demo_sampling_"):
+                                from evaluation.prompts.get_prompts import get_prompting_instruction_demo_sampling
+                                prompt_prefix = get_prompting_instruction_demo_sampling(args.model_mode[-5:]) + "\n"
+
+                            elif args.model_mode.startswith("prompt_demo_"):
+                                from evaluation.prompts.get_prompts import get_prompting_instruction_demo
+                                prompt_prefix = get_prompting_instruction_demo(args.model_mode[-5:]) + "\n"
+
+                            elif args.model_mode.startswith("prompt_llm_description_"):
+                                from evaluation.prompts.get_prompts import get_prompting_instruction_llm_description
+                                prompt_prefix = get_prompting_instruction_llm_description(args.model_mode[-5:]) + "\n"
+
+                            elif args.model_mode.startswith("prompt_keywords_"):
+                                from evaluation.prompts.get_prompts import get_prompting_instruction_keywords
+                                prompt_prefix = get_prompting_instruction_keywords(args.model_mode[-5:]) + "\n"
                             
                             elif args.model_mode.startswith("prompt_"):
                                 from evaluation.prompts.get_prompts import get_prompting_instruction

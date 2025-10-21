@@ -48,7 +48,7 @@ def get_prompting_instruction(levels: str) -> str:
     instruction += level_str
     return instruction
 
-def get_prompting_instruction_v1(levels: str) -> str:
+def get_prompting_instruction_inst(levels: str) -> str:
     """
     xxxxx: ocean, 0 represents high level, 1 represents low level
     - Should be 0xxxx, 1xxxx, x0xxx, x1xxx, etc.
@@ -56,24 +56,24 @@ def get_prompting_instruction_v1(levels: str) -> str:
     assert len(levels) == 5
     assert levels.count("x") == 4
     assert '0' in levels or '1' in levels
-    
+
     instruction = "You are a person with "
     big_five_traits = ['openness', 'conscientiousness', 'extraversion', 'agreeableness', 'neuroticism']
     level_str = ['high', 'low']
-    
+
     for idx, level in enumerate(levels):
         if level in ['0', '1']:
             level = int(level)
             instruction += f"{level_str[level]} {big_five_traits[idx]}."
             break
-    
+
     return instruction
     
 
 import json
-prompt_v4_res = json.load(open("../../PsychoBench/prompt_v4_res.json", 'r'))
+prompt_llm_description_res = json.load(open("../../PsychoBench/prompt_llm_description_res.json", 'r'))
 
-def get_prompting_instruction_v4(levels: str) -> str:
+def get_prompting_instruction_llm_description(levels: str) -> str:
     """
     xxxxx: ocean, 0 represents high level, 1 represents low level
     - Should be 0xxxx, 1xxxx, x0xxx, x1xxx, etc.
@@ -94,14 +94,14 @@ def get_prompting_instruction_v4(levels: str) -> str:
     for idx, level in enumerate(levels):
         if level in ['0', '1']:
             level = int(level)
-            new_instruction = instruction.format(description=prompt_v4_res[big_five_traits[idx].capitalize()][level_str[level]])
+            new_instruction = instruction.format(description=prompt_llm_description_res[big_five_traits[idx].capitalize()][level_str[level]])
             break
     print(new_instruction)
     return new_instruction
 
-prompt_chat_res = json.load(open("../../PsychoBench/prompt_chat_res.json", 'r'))
+prompt_demo_res = json.load(open("../../PsychoBench/prompt_demo_res.json", 'r'))
 
-def get_prompting_instruction_chat(levels: str) -> str:
+def get_prompting_instruction_demo(levels: str) -> str:
     """
     xxxxx: ocean, 0 represents high level, 1 represents low level
     - Should be 0xxxx, 1xxxx, x0xxx, x1xxx, etc.
@@ -117,12 +117,12 @@ def get_prompting_instruction_chat(levels: str) -> str:
     for idx, level in enumerate(levels):
         if level in ['0', '1']:
             level = int(level)
-            instruction = prompt_chat_res[big_five_traits[idx]][level_str[level]]
+            instruction = prompt_demo_res[big_five_traits[idx]][level_str[level]]
             break
     print(instruction)
     return instruction
 
-class PromptChatSampler:
+class PromptDemoSampler:
     def __init__(self):
         self.big_five_traits = ['Openness', 'Conscientiousness', 'Extraversion', 'Agreeableness', 'Neuroticism']
         levels = ['high', 'low']
@@ -141,19 +141,19 @@ class PromptChatSampler:
         
         
         
-    def get_prompt_chat_sample(self, in_trait, in_level):
+    def get_prompt_demo_sample(self, in_trait, in_level):
         examples = self.df[in_trait][in_level].sample(n = self.n_examples)['response'].tolist()
-        
+
         examples = "\n```\n" + "\n".join([f'Example {i}: "{example}"' for i, example in enumerate(examples)]) + "\n```\n\n"
-        
+
         instruction = f"""Here are {self.n_examples} examples of how people like you have responded in different situations. Pay attention to how they approach communication and problem-solving.
 
 """ + examples
 
         return instruction
-                    
 
-def get_prompting_instruction_chat_sampling(levels: str) -> str:
+
+def get_prompting_instruction_demo_sampling(levels: str) -> str:
     """
     xxxxx: ocean, 0 represents high level, 1 represents low level
     - Should be 0xxxx, 1xxxx, x0xxx, x1xxx, etc.
@@ -164,14 +164,14 @@ def get_prompting_instruction_chat_sampling(levels: str) -> str:
     
     big_five_traits = ['o', 'c', 'e', 'a', 'n']
     level_str = ['high', 'low']
-    
-    prompt_chat_sampler = PromptChatSampler()
-    
+
+    prompt_demo_sampler = PromptDemoSampler()
+
     instruction = ""
     for idx, level in enumerate(levels):
         if level in ['0', '1']:
             level = int(level)
-            instruction = prompt_chat_sampler.get_prompt_chat_sample(big_five_traits[idx], level)
+            instruction = prompt_demo_sampler.get_prompt_demo_sample(big_five_traits[idx], level)
             break
     print(instruction)
     return instruction

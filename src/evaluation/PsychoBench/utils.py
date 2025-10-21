@@ -501,7 +501,7 @@ def analysis_results(questionnaire, args):
     for i, j, k in tmp_res:
         json_data[f'{i}_mean'] = jx
         json_data[f'{i}_std'] = k
-    write_json_to_csv(json_data, "stats/summary_prompt_v5.csv")
+    write_json_to_csv(json_data, "stats/summary_prompt_keywords.csv")
     
     with open("stats/scores_list_stat_test.jsonl", "a") as f:
         json.dump({"model_mode": args.name_exp, "scores_list": scores_list}, f)

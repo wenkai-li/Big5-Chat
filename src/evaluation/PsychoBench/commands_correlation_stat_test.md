@@ -31,9 +31,9 @@ for mode in "${mode[@]}"; do
         --name-exp 8b_dpo_${mode}
 done
 
-# IPIP-NEO 8B Prompt V1
+# IPIP-NEO 8B Prompt Inst
 
-mode=("prompt_v1_0xxxx" "prompt_v1_1xxxx" "prompt_v1_x0xxx" "prompt_v1_x1xxx" "prompt_v1_xx0xx" "prompt_v1_xx1xx" "prompt_v1_xxx0x" "prompt_v1_xxx1x" "prompt_v1_xxxx0" "prompt_v1_xxxx1")
+mode=("prompt_inst_0xxxx" "prompt_inst_1xxxx" "prompt_inst_x0xxx" "prompt_inst_x1xxx" "prompt_inst_xx0xx" "prompt_inst_xx1xx" "prompt_inst_xxx0x" "prompt_inst_xxx1x" "prompt_inst_xxxx0" "prompt_inst_xxxx1")
 for mode in "${mode[@]}"; do
     python3 run_psychobench.py \
         --model llama3_8b \
